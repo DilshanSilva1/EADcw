@@ -400,6 +400,10 @@
               </Border>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="nameTBKeyPressed"/>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="nameTBKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="parentTB">
           <Properties>
@@ -418,6 +422,10 @@
               </Border>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="parentTBActionPerformed"/>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="parentTBKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="cityTB">
           <Properties>
@@ -436,6 +444,9 @@
               </Border>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="cityTBKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="classTB">
           <Properties>

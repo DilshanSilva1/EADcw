@@ -102,6 +102,16 @@ public class addAdmin extends javax.swing.JFrame {
         nameTB.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
         nameTB.setForeground(new java.awt.Color(204, 204, 204));
         nameTB.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        nameTB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nameTBActionPerformed(evt);
+            }
+        });
+        nameTB.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                nameTBKeyTyped(evt);
+            }
+        });
 
         emailTB.setBackground(new java.awt.Color(51, 51, 51));
         emailTB.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
@@ -239,9 +249,13 @@ public class addAdmin extends javax.swing.JFrame {
         setVisible(false);
         Dashboard h1 = new Dashboard();
         h1.setVisible(true);
+        //opens different jfrom
     }//GEN-LAST:event_cancelBTNActionPerformed
 
     private void cancelBTN1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelBTN1ActionPerformed
+        //make sure email is entered
+        String test=emailTB.getText();
+        if (test.contains("@gmail.com")){
         try{
             stmt = con.createStatement();
             String admName=nameTB.getText();
@@ -260,7 +274,10 @@ public class addAdmin extends javax.swing.JFrame {
 
         }catch(Exception e){
         JOptionPane.showMessageDialog(null,e);
-    }
+    }}
+        else{
+            JOptionPane.showMessageDialog(null,"Invalid email address");
+        }
 
     }//GEN-LAST:event_cancelBTN1ActionPerformed
 
@@ -281,6 +298,21 @@ public class addAdmin extends javax.swing.JFrame {
         About h1 = new About();
         h1.setVisible(true);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void nameTBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameTBActionPerformed
+       
+    }//GEN-LAST:event_nameTBActionPerformed
+
+    private void nameTBKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nameTBKeyTyped
+        //set TB to accept Letters only for name city and other fields.
+        char c = evt.getKeyChar();
+        if (Character.isLetter(c)|| Character.isWhitespace(c)||Character.isISOControl(c))
+        {
+            nameTB.setEditable(true);
+        }else{
+            nameTB.setEditable(false);
+        }
+    }//GEN-LAST:event_nameTBKeyTyped
 
     /**
      * @param args the command line arguments

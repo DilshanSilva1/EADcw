@@ -289,9 +289,11 @@ public class Admin extends javax.swing.JFrame {
         setVisible(false);
         Dashboard h1 = new Dashboard();
         h1.setVisible(true);
+        //new form
     }//GEN-LAST:event_cancelBTNActionPerformed
 
     private void cancelBTN1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelBTN1ActionPerformed
+        //compares database with id number entered and provides results in relavent text boxes
         try{
             stmt = con.createStatement();
             int admId = Integer.parseInt(idTB.getText());
@@ -316,11 +318,12 @@ public class Admin extends javax.swing.JFrame {
     }//GEN-LAST:event_cancelBTN1ActionPerformed
 
     private void SearchBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchBTNActionPerformed
+        //deletes admin account based on entered admin id
         try{
             stmt = con.createStatement();
-            int stdId = Integer.parseInt(idTB.getText());
+            int admId = Integer.parseInt(idTB.getText());
 
-            String sql ="DELETE FROM admin WHERE ID='"+stdId+"'";
+            String sql ="DELETE FROM admin WHERE ID='"+admId+"'";
 
             stmt.executeUpdate(sql);
             JOptionPane.showMessageDialog(null,"Data Deleted");
@@ -329,11 +332,14 @@ public class Admin extends javax.swing.JFrame {
         }catch(SQLException e){
             JOptionPane.showMessageDialog(null,e);
 
+        }catch(HeadlessException | NumberFormatException e){
+            JOptionPane.showMessageDialog(null,e);
         }
 
     }//GEN-LAST:event_SearchBTNActionPerformed
 
     private void SearchBTN1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchBTN1ActionPerformed
+        //compares database with id number entered and provides results in relavent text boxes
         try{
             stmt = con.createStatement();
             int admId = Integer.parseInt(idTB.getText());

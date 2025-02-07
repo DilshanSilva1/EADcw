@@ -129,11 +129,21 @@ public class Student extends javax.swing.JFrame {
         parentTB.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
         parentTB.setForeground(new java.awt.Color(204, 204, 204));
         parentTB.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        parentTB.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                parentTBKeyTyped(evt);
+            }
+        });
 
         cityTB.setBackground(new java.awt.Color(51, 51, 51));
         cityTB.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
         cityTB.setForeground(new java.awt.Color(204, 204, 204));
         cityTB.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        cityTB.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                cityTBKeyTyped(evt);
+            }
+        });
 
         phoneTB.setBackground(new java.awt.Color(51, 51, 51));
         phoneTB.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
@@ -177,11 +187,21 @@ public class Student extends javax.swing.JFrame {
         nameTB.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
         nameTB.setForeground(new java.awt.Color(204, 204, 204));
         nameTB.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        nameTB.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                nameTBKeyTyped(evt);
+            }
+        });
 
         bloodTB.setBackground(new java.awt.Color(51, 51, 51));
         bloodTB.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
         bloodTB.setForeground(new java.awt.Color(204, 204, 204));
         bloodTB.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        bloodTB.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                bloodTBKeyTyped(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -414,6 +434,7 @@ public class Student extends javax.swing.JFrame {
     }//GEN-LAST:event_SearchBTNActionPerformed
 
     private void SearchBTN1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchBTN1ActionPerformed
+        //compares database with id number entered and provides results in relavent text boxes
         try{
             stmt = con.createStatement();
             int stdId = Integer.parseInt(idTB.getText());
@@ -437,6 +458,53 @@ public class Student extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_SearchBTN1ActionPerformed
+
+    private void nameTBKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nameTBKeyTyped
+        //set TB to accept Letters only for name city and other fields.
+        char c = evt.getKeyChar();
+        if (Character.isLetter(c)|| Character.isWhitespace(c)||Character.isISOControl(c))
+        {
+            nameTB.setEditable(true);
+        }else{
+            nameTB.setEditable(false);
+        }
+    }//GEN-LAST:event_nameTBKeyTyped
+
+    private void parentTBKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_parentTBKeyTyped
+        //set TB to accept Letters only for name city and other fields.
+        char c = evt.getKeyChar();
+        if (Character.isLetter(c)|| Character.isWhitespace(c)||Character.isISOControl(c))
+        {
+            parentTB.setEditable(true);
+        }else{
+            parentTB.setEditable(false);
+        }
+    }//GEN-LAST:event_parentTBKeyTyped
+
+    private void cityTBKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cityTBKeyTyped
+       //set TB to accept Letters only for name city and other fields.
+        char c = evt.getKeyChar();
+        if (Character.isLetter(c)|| Character.isWhitespace(c)||Character.isISOControl(c))
+        {
+            cityTB.setEditable(true);
+        }else{
+            cityTB.setEditable(false);
+        }
+    }//GEN-LAST:event_cityTBKeyTyped
+
+    private void bloodTBKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_bloodTBKeyTyped
+       //set TB to accept Letters only for name city and other fields.
+       String test=bloodTB.getText();
+        char c = evt.getKeyChar();
+        if (Character.isLetter(c)|| Character.isWhitespace(c)||Character.isISOControl(c))
+        {
+            bloodTB.setEditable(true);
+            
+            
+        }else{
+            bloodTB.setEditable(false);
+        }
+    }//GEN-LAST:event_bloodTBKeyTyped
 
     /**
      * @param args the command line arguments

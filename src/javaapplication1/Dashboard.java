@@ -272,30 +272,35 @@ public class Dashboard extends javax.swing.JFrame {
                     setVisible(false);
                     AddStudent h1 = new AddStudent();
                     h1.setVisible(true);
+                    //opens different jfrom
     }//GEN-LAST:event_loginBTNActionPerformed
 
     private void loginBTN2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBTN2ActionPerformed
                     setVisible(false);
                     showStudent h1 = new showStudent();
                     h1.setVisible(true);
+                    //opens different jfrom
     }//GEN-LAST:event_loginBTN2ActionPerformed
 
     private void loginBTN5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBTN5ActionPerformed
                     setVisible(false);
                     Student h1 = new Student();
                     h1.setVisible(true);
+                    //opens different jfrom
     }//GEN-LAST:event_loginBTN5ActionPerformed
 
     private void loginBTN6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBTN6ActionPerformed
                     setVisible(false);
                     showAdmin h1 = new showAdmin();
                     h1.setVisible(true);
+                    //opens different jfrom
     }//GEN-LAST:event_loginBTN6ActionPerformed
 
     private void loginBTN7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBTN7ActionPerformed
                     setVisible(false);
                     addAdmin h1 = new addAdmin();
                     h1.setVisible(true);
+                    //opens different jfrom
     }//GEN-LAST:event_loginBTN7ActionPerformed
 
     private void loginBTN8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBTN8ActionPerformed
@@ -308,30 +313,35 @@ public class Dashboard extends javax.swing.JFrame {
                     setVisible(false);
                     About h1 = new About();
                     h1.setVisible(true);
+                    //opens different jfrom
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
                     setVisible(false);
                     Login h1 = new Login();
                     h1.setVisible(true);
+                    //opens different jfrom
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
                     setVisible(false);
                     Dashboard h1 = new Dashboard();
                     h1.setVisible(true);
+                    //opens different jfrom
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void addclassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addclassActionPerformed
                     setVisible(false);
                     Classes h1 = new Classes();
                     h1.setVisible(true);
+                    //opens different jfrom
     }//GEN-LAST:event_addclassActionPerformed
 
     private void addclass1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addclass1ActionPerformed
                     setVisible(false);
                     showClass h1 = new showClass();
                     h1.setVisible(true);
+                    //opens different jfrom
     }//GEN-LAST:event_addclass1ActionPerformed
 
     /**

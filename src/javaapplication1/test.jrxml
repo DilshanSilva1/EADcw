@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="test" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT  *  FROM STUDENT]]>
+	</queryString>
+	<field name="ID" class="java.lang.Integer"/>
+	<field name="std_Name" class="java.lang.String"/>
+	<field name="std_FatherName" class="java.lang.String"/>
+	<field name="std_BloodType" class="java.lang.String"/>
+	<field name="std_Phone" class="java.lang.String"/>
+	<field name="std_City" class="java.lang.String"/>
+	<field name="std_Class" class="java.lang.Integer"/>
+	<variable name="ID_1" class="java.lang.Integer" resetType="Page" calculation="Count">
+		<variableExpression><![CDATA[$F{ID}]]></variableExpression>
+	</variable>
+	<variable name="std_Class_1" class="java.lang.Integer" resetType="Page" calculation="DistinctCount">
+		<variableExpression><![CDATA[$F{std_Class}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="79"/>
+				<textElement textAlignment="Center">
+					<font fontName="Bahnschrift" size="36" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Student Report]]></text>
+			</staticText>
+			<line>
+				<reportElement x="133" y="55" width="291" height="1"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="17" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="31" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="57" height="19"/>
+				<textElement>
+					<font fontName="Bahnschrift" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="57" y="0" width="100" height="19"/>
+				<textElement>
+					<font fontName="Bahnschrift" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="157" y="0" width="100" height="19"/>
+				<textElement>
+					<font fontName="Bahnschrift" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fathers Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="257" y="0" width="68" height="19"/>
+				<textElement>
+					<font fontName="Bahnschrift" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Blood Type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="325" y="0" width="89" height="19"/>
+				<textElement>
+					<font fontName="Bahnschrift" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Phone Number]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="414" y="0" width="82" height="19"/>
+				<textElement>
+					<font fontName="Bahnschrift" isBold="true"/>
+				</textElement>
+				<text><![CDATA[City]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="496" y="0" width="59" height="19"/>
+				<textElement>
+					<font fontName="Bahnschrift" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Class]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="24" width="555" height="1"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="57" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{ID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="57" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{std_Name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="157" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{std_FatherName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="257" y="0" width="68" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{std_BloodType}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="325" y="0" width="89" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{std_Phone}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="414" y="0" width="82" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{std_City}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="496" y="0" width="59" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{std_Class}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="11" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="9" width="555" height="1"/>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="133" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Bahnschrift" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Summary]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="133" y="0" width="133" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Bahnschrift" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Count of Students]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="133" y="20" width="133" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$V{ID_1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="266" y="0" width="158" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Bahnschrift" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[No of Unique Classes]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="266" y="20" width="158" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$V{std_Class_1}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="9" splitType="Stretch"/>
+	</summary>
+</jasperReport>
